@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: cart
+  name: shipping
   namespace: roboshop
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: cart
+    name: shipping
   minReplicas: {{ .Values.horizontalPodAutoScaler.minReplicas }}
   maxReplicas: {{ .Values.horizontalPodAutoScaler.maxReplicas }}
   metrics:
