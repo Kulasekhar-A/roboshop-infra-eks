@@ -1,0 +1,10 @@
+deployment:
+  replicas: 1
+  imageName: "annurukulasekhar/frontend"
+  imageVersion: "1.4.0"
+horizontalPodAutoScaler:
+  minReplicas: 1
+  maxReplicas: 10
+  averageUtilization: 20
+ingress:
+  host: "roboshop-dev.annuru.online"
