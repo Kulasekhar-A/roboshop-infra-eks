@@ -26,23 +26,24 @@ spec:
         image: {{ .Values.deployment.imageName }}:{{ .Values.deployment.imageVersion }}
         resources:
           requests:
-            memory: "120Mi"
+            memory: "128Mi"
             cpu: "100m"
           limits:
-            memory: "120Mi"
-            cpu: "100m"
+            memory: "256Mi"
+            cpu: "120m"
         readinessProbe:
           tcpSocket:
             port: 8080
           failureThreshold: 2
           periodSeconds: 10
-          initialDelaySeconds: 15
+          initialDelaySeconds: 30
         livenessProbe:
           httpGet:
             path: /health
             port: 8080
           failureThreshold: 2
           periodSeconds: 10
+          initialDelaySeconds: 30
         envFrom:
         - configMapRef:
             name: payment

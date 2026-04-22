@@ -8,7 +8,7 @@ terraform {
 
     backend "s3" {
         bucket = "remote-state-project-annuru-dev"
-        key = "roboshop-dev-frontend-alb"
+        key = "terraform-eks-frontend-alb"
         region = "us-east-1"
         encrypt = true
         use_lockfile = true
